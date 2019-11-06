@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no, shrink-to-fit=no">
+
+		<title>LeoRover</title>
+
+		<meta name="application-name" content="LeoRover UI">
+		<meta name="apple-mobile-web-app-title" content="LeoRover UI">
+
+		<meta name="theme-color" content="#000000">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+
+		<!-- icons -->
+		<link rel="shortcut icon" href="./img/logo.jpg">
+		<link rel="apple-touch-icon-precomposed" href="./img/logo.jpg">
+		<link rel="manifest" href="./manifest.webmanifest">
+
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/font.css" />
+		<link rel="stylesheet" href="css/bootstrap-slider.min.css" />
+
+
+		<script src="./js/jquery.min.js"></script>
+		<script src="./js/bootstrap.min.js"></script>
+		<script src="./js/roslib.min.js"></script>
+		<script src="./js/leo.js"></script>
+		<script src="./js/fullscreen.js"></script>
+		<script src="./js/bootstrap-slider.min.js"></script>
+
+	
+
+	</head>
+
+	<body class="bg-custom">
+
+
+	<nav class="navbar navbar-expand-md bg-bar">
+		<div class="container-fluid">
+			
+			<div class="col-2 navbar-brand" href="#">
+				<img class="rounded" src="./img/logoLeo.png" alt="Logo" style="width: 70px; height: 40px;"/>
+			</div>
+
+			<div class="col-3" >
+				<div id="batteryID" class="center-fit" style="width: 70px; height: 40px; color: aliceblue; text-align: center;">Voltage: 0V</div>
+			</div>
+
+			<div class="col-2 text-center">
+				<button class="bg-dark btn-sm mx-auto" style="width: 45px; height: 45px;" type="button" onclick="fullScreen()">
+					<img class="rounded img-fluid" src="img/nav-bar-fullscreen.svg" alt="FullScreen" style="width: 25px; height: 25px;"/>
+				</button>
+			</div>
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="col-5 collapse navbar-collapse ml-auto" id="collapsibleNavbar">
+				<ul class="navbar-nav ml-auto">
+				<li class="nav-item ml-auto">
+					<button type="button" class="btn btn-warning btn-sm custom-btn mt-2 ml-3" onclick="systemReboot()">Reboot</button>
+				</li>
+
+				<li class="nav-item ml-auto">
+					<button type="button" class="btn btn-danger btn-sm custom-btn mt-2 ml-3" onclick="turnOff()">Turn off</button>
+				</li>
+				</ul>
+			</div>
+		</div>
+	</nav> 
+
+	<!-- <div class="col my-2 ml-auto mr-auto bg-servo" style="color: #ffffff">
+		<div >
+			<label class="switch center">
+				<input type="checkbox" id="relay-1" onclick="rel1Trig()">
+				<span class="slider1"></span>
+			</label>
+			Relay 1
+		</div>
+		<div>
+			<label class="switch">
+				<input type="checkbox" id="relay-2" onclick="rel2Trig()">
+				<span class="slider1"></span>
+			</label>
+			Relay 2
+		</div>
+		<div>
+			<label class="switch">
+				<input type="checkbox" id="relay-3" onclick="rel3Trig()">
+				<span class="slider1"></span>
+			</label>
+			Relay 3
+		</div>
+		
+	</div> -->
+	
+
+
+	<div class="row md-6 center-fit">
+
+		<div class="col my-2 d-none d-md-block">
+			<div id="servoB" class=" rounded bg-servo ml-auto mr-auto" style=" width: 850px; height: 400px;" >
+
+
+				<div class="col-6" style="color: #ffffff">	
+					<div >
+						<label class="switch center">
+							<input type="checkbox" id="button" onclick="Trig()">
+							<span class="slider1"></span>
+						</label>
+					
+						<div class="col-2 ml-2 mt-2" id="onoff">Lift</div>
+					</div>
+					
+				</div>		
+
+
+				<div class="row" style=" width: 100px; height: 50px;" ></div>
+
+				<div class="row">
+					<div class="col-md-2 ml-1 mt-2">
+						<label for="lin-slider">
+							<strong class="text-light">Joint 3</strong>
+						</label>
+						<input id="s1-slider" type="text"/>
+					</div>
+				</div>
+				
+				<div class="row" style=" width: 100px; height: 50px;" ></div>
+
+				<div class="row">
+					<div class="col-md-2 ml-1">
+						<label for="lin-slider">
+							<strong class="text-light">Joint 2</strong>
+						</label>
+						<input id="s2-slider" type="text"/>
+					</div>
+				</div>
+				
+				<div class="row" style=" width: 100px; height: 50px;" ></div>
+
+			</div>
+		</div>
+	</body>
+</html>
